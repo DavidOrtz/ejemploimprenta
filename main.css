@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+}
+
+body{
+    background-image: url(./img/background_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+#main{
+    width: 100%;
+    height: 50px;
+    
+
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    background-color:white;
+    line-height: 80px;
+    position: fixed;
+    z-index: 1;
+    
+    
+}
+
+nav ul{
+    float:right;
+    margin-right: 30px;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+
+nav ul li:hover{
+    background-color:red;
+    transition: 0.8s all;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:black;
+    padding: 30px;
+
+}
+
+ @media screen and (max-width: 950px) { 
+
+    nav {
+		width:100%;
+		text-align:center; /*Centramos el menu y el logotipo*/
+		line-height:50px;
+ }
+}
+
+
+
+ /*empieza tarjetas de presentacion*/
+
+
+.contenedor {
+	max-width: 1200px;
+	margin:50px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.contenedor_tarjeta {
+	margin: 20px;
+}
+
+.contenedor_tarjeta a {
+	display: inline-block;
+}
+
+.contenedor_tarjeta:hover figure {
+	transform: perspective(600px) rotateY(180deg);
+	-webkit-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+	box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+}
+
+
+
+figure {
+	width: 300px;
+	height: 350px;
+	margin:0;
+	position: relative;
+	transition: all ease .9s;
+	transform-style: preserve-3d;
+	/* Nota:
+		Establecemos que la imagen tendra una rotacion de 0grados al inicio porque si no
+		ponemos esta propiedad nos da un poco de problemas en algunos navegadores al pasar el cursor.
+	*/
+	transform: perspective(600px) rotateY(0deg);
+}
+
+figure .frontal,
+figure .trasera {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	transition: all ease .9s;
+}
+
+figure .frontal {
+	display: block;
+	background: #000;
+
+	/* Podemos ocultar la imagen al da la vuelta si lo queremos */
+	/*backface-visibility: hidden;*/
+}
+
+figure .trasera {
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	color: #fff;
+	transform: perspective(600px) rotateY(180deg);
+	backface-visibility: hidden;
+	overflow: auto;
+}
+
+.contenedor_tarjeta:nth-child(1) figure .trasera{
+	background: rgba(223,234,241,0.7);
+	background: -moz-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(223,234,241,0.7)), color-stop(100%, rgba(15,99,144,1)));
+	background: -webkit-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: -o-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: -ms-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	background: linear-gradient(to bottom, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfeaf1', endColorstr='#0f6390', GradientType=0 );
+}
+
+.contenedor_tarjeta:nth-child(2) figure .trasera{
+	background: rgba(251,232,202,0.7);
+	background: -moz-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(251,232,202,0.7)), color-stop(100%, rgba(25,44,72,1)));
+	background: -webkit-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -o-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -ms-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: linear-gradient(to bottom, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
+}
+
+.contenedor_tarjeta:nth-child(3) figure .trasera{
+	background: rgba(95,58,53,0.7);
+	background: -moz-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(95,58,53,0.7)), color-stop(100%, rgba(221,32,47,1)));
+	background: -webkit-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: -o-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: -ms-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	background: linear-gradient(to bottom, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f3a35', endColorstr='#dd202f', GradientType=0 );
+}
+
+figure .trasera .titulo {
+	color: #fff;
+	font-weight: normal;
+	margin-bottom: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+}
+
+figure .trasera hr {
+	height: 2px;
+	background: #fff;
+	border: none;
+	margin-bottom: 20px;
+	opacity: .5;
+}
+
+figure .trasera p {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 22px;
+	font-size: 14px;
+}
+
+@media screen and (max-width: 992px) { 
+	figure .trasera {
+		/*position: relative;*/
+		backface-visibility:visible;
+		transform: perspective(600px) rotateY(0deg);
+	}
+
+	.contenedor_tarjeta:hover figure {
+		transform: perspective(600px) rotateY(0deg);	
+	}
+
+}
+
+/*empieza footer*/
+
+    .container-footer-all{
+        width: 100%;
+        margin: auto;
+        padding: 0px;
+        background:rgb(66, 65, 65);
+    }
+    
+    .container-body{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    
+    .colum1{
+        max-width: 400px;
+    }
+    
+    .colum1 h1{
+        font-size: 22px;
+        color: white;
+        margin: 20px;
+    }
+    
+    .colum1 p{
+        font-size: 14px;
+        color: white;
+        margin-top: 20px;
+        margin: 20px;
+    }
+    
+    .colum2{
+        max-width: 400px;
+        
+    }
+    
+    .colum2 h1{
+        font-size: 22px;
+        color: white;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    
+    .row{
+        
+        font-size: 14px;
+        margin: 20px;
+        color: white;
+    }
+    
+    .correo{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .colum3{
+        max-width: 400px;
+        color: white;
+    }
+    
+    .colum3 h1{
+        font-size: 22px;
+    }
+    
+    .row2{
+        margin-top: 20px;
+        display: flex;
+    }
+    
+    .row2 label{
+        
+        margin-left: 20px;
+        max-width: 140px;
+        font-size: 14px;
+        text-align: left;
+    }
+    
+    label a{
+        text-decoration: none;
+        color: white;
+        margin-top: 20px;
+    }
+    .contacto{
+    margin: 20px;
+    }
+    
+    .container-footer{
+        width: 100%;  
+        background: #101010;
+    }
+    
+    @media screen and (max-width: 1100px){
+        
+        .container-body{
+            flex-wrap: wrap;
+        }
+        
+        .colum1{
+            max-width: 100%;
+        }
+        
+        .colum2,
+        .colum3{
+            margin-top: 40px;
+        }
+    }
+    
+    .final{
+        width: 100%;
+        background: black;
+        color: white;
+        text-align: center;
+        font-size: 13px;
+        
+    }
+
+    /*slider*/
+    .slider{
+        width: 60%;
+        margin: auto;
+        overflow: hidden;
+        margin-top: -20px;
+    }
+    
+    .slider ul{
+        display: flex;
+        padding: 0;
+        width: 400%;
+        animation: cambio 20s infinite alternate ease-in-out;
+    }
+    
+    .slider_completo {
+    
+    margin: 0;
+    padding: 0;
+    }
+    
+    .slider li{
+        width: 100%;
+        list-style: none;
+        margin-top: 80px;
+    }
+    
+    .slider img{
+        width: 100%;
+        height: 300px;
+    }
+    
+    @keyframes cambio{
+        0%{margin-left: 0%;}
+        20%{margin-left: 0%;}
+    
+        25%{margin-left: -100%;}
+        45%{margin-left: -100%;}
+    
+        50%{margin-left: -200%;}
+        70%{margin-left: -200%;}
+    
+        75%{margin-left: -300%;}
+        100%{margin-left: -300%;}
+    }
+    
